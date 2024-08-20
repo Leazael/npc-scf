@@ -1,6 +1,6 @@
 :root {
   --fs-def: 9pt;
-  --fs-large: 10pt;
+  --fs-large: 11pt;
 }
 
 /* Reset margins and padding */
@@ -20,8 +20,8 @@
   width: 21cm; /* Full width of A4 */
   height: 29.7cm; /* Full height of A4 */
   padding: 5mm; /* 5mm padding around content */
-  border: 1px solid #000;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  /*uncomment to see page edges when debugging*/
+  /*border: 1px solid #000;*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,32 +30,28 @@
 /* Typography */
 body {
   font-family: "Corbel", sans-serif;
-  line-height: 1.2;
   font-size: var(--fs-def);
-  margin: 0;
   background-color: white;
+  color: black;
 }
 
 /* Header Styling */
 header {
-  text-align: center;
-  padding: 5mm 0;
 }
 
 h1 {
   display: flex;
-  align-items: center; /* Centers text vertically */
-  font-size: 11pt;
-  margin-left: -0.2mm;
-  margin-top: 0;
-  margin-bottom: 0;
+  align-items: center;
+  font-size: var(--fs-large);
+}
+
+.with-clef {
   background-image: url('clef.svg');
   background-size: 105%;
   height: 0.4cm;
-  padding-left: 0.45cm;
-  padding-bottom: 1mm;
-  color: black; /* Text color */
-  text-shadow: .5px 0 .5px #ffffff, /* Black shadow for top-left */ -.5px 0 .5px #ffffff; /* Black shadow for top-left */
+  padding: 0 0 1mm 4.5mm;
+  /* white shadow for contrast? */
+  text-shadow: 0.5px 0 0.5px #ffffff, -0.5px 0 0.5px #ffffff;  
 }
 
 
@@ -73,21 +69,14 @@ h1 {
   flex-direction: column;
 }
 
-/* Section Content */
-section {
-  margin-bottom: 0;
-}
-
 p {
-  text-align: justify; /* Justify text in paragraphs */
+  text-align: justify;
 }
 
 .name-title {
   font-weight: bold;
-  font-size: var(--fs-def);
 }
 
-/* Span Styles */
 .bold {
   font-weight: bold;
 }
