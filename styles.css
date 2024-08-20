@@ -1,0 +1,131 @@
+:root {
+    --fs-def: 9pt;
+    --fs-large: 10pt;
+}
+
+/* Reset margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure no additional margins when printing */
+@page {
+  margin: 0;
+}
+
+/* Define the A4 page size with 5mm margins */
+.a4-page {
+  width: 21cm; /* Full width of A4 */
+  height: 29.7cm; /* Full height of A4 */
+  padding: 5mm; /* 5mm padding around content */
+  border: 1px solid #000;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Typography */
+body {
+  font-family: "Corbel", sans-serif;
+  line-height: 1.2;
+  font-size: var(--fs-def);
+  margin: 0;
+  background-color: white;
+}
+
+/* Header Styling */
+header {
+  text-align: center;
+  padding: 5mm 0;
+}
+
+h1 {
+  display: flex;
+  align-items: center; /* Centers text vertically */
+  font-size: 11pt;
+  margin-left: -0.2mm;
+  margin-top: 0cm;
+  margin-bottom: 0cm;
+  background-image: url('clef.svg');
+  background-size: 105%;
+  height: 0.4cm;
+  padding-left: 0.45cm;
+  padding-bottom: 1mm;
+  color: black; /* Text color */
+  text-shadow:
+   .5px 0px .5px #ffffff, /* Black shadow for top-left */
+  -.5px 0px .5px #ffffff; /* Black shadow for top-left */
+}
+
+
+/* Two-column Layout */
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7mm; /* Gap between the two columns */
+  flex-grow: 1; /* Allows the columns to take up available space */
+}
+
+/* Ensuring columns stack content at the top */
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section Content */
+section {
+  margin-bottom: 0;
+}
+
+p {
+  text-align: justify; /* Justify text in paragraphs */
+}
+
+.name-title {
+  font-weight: bold;
+  font-size: var(--fs-def);
+}
+
+/* Span Styles */
+.bold {
+    font-weight: bold;
+}
+
+.alignment-type::after {
+    content: ", ";
+}
+
+.age::before {
+    content: "Age ";
+    font-weight: bold;
+}
+
+.init::before {
+    content: "Init ";
+    font-weight: bold;
+}
+
+.init::after {
+    content: "; ";
+}
+
+.senses::before {
+  content: "Senses ";
+  font-weight: bold;
+}
+
+.ac-full::before {
+  content: "AC ";
+  font-weight: bold;
+}
+
+.ac-touch::before {
+  content: "; Touch ";
+}
+
+.ac-flat-footed::before {
+  content: "; Flat-footed ";
+}

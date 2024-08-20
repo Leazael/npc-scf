@@ -1,0 +1,225 @@
+!Name Ludovico Zanni (Level 5)
+Male halfling Bard (Instrumentalist/Cacophist) 5
+!NG Small Humanoid (Halfling), !Age 61
+!Init +2; !Senses Perception +8
+
+===𝄞|Defence================================================
+
+!AC 18 [20], !Touch 13 [15], !FlatFooted 16
+__(+2 Dex, +5 Armour, +1 Size, [+2 dodge])
+!hp 35 + 1d8 = 5d8 + 5 [8, 8, 7, 7, ?]
+ > Fort:   +4 = +1 | +1 Con | +1/+1 (luck/res)
+ > Ref:   *+8 = +4 | +2 Dex | +1/+1 (luck/res)
+ > Will:   +5 = +4 | −1 Wis | +1/+1 (luck/res)
+%Special Defenses: +2 (racial) vs. fear effects;
+ +2 dodge to AC for the duration of bardic performances,
+ *Evasion.
+
+===𝄞|Offence================================================
+
+!Speed 20 ft.; !Carry 20/40/60 lb.
+!Melee Mwk Rapier +7 (1d4 − 1, 18−20/×2)
+!Ranged Sling +6 (1d3 − 1)
+%Special Attacks: Cacophonous Chord (3d6, DC 17 Fort halves)
+// +3 bab + 2 dex + 1 size
+===𝄞|Statistics=============================================
+
+!AbilityScores
+ > Str (−1)   8 = 11  | −1 (age) −2 (race)
+ > Dex (+2)  14 = 13  | −1 (age) +2 (race)
+ > Con (+1)  12 = 13  | −1 (age)
+ > Int (+3)  16 = 15  | +1 (age)
+ > Wis (−1)   8 =  9  | +1 (age)
+ > Cha (+5)  20 = 17  | +1 (age) +2 (race)
+!BAB +3; !CMB +1; !CMD 13 [15] 
+%Languages: Common, Halfling, Goblin, Varisian, Hallitim, 
+ Androffan
+%Religion: Brigh, Shelyn
+%Origin: Ustalav (Karcau)
+
+===𝄞|Traits=================================================
+
+%Local Ties: +1 trait bonus on Knowledge [Engineering], 
+ and treated as if possessing the Technologist feat for…
+ it.
+%Artisan: +2 trait bonus on Craft [Woodworking]
+%Halfling Luck: +1 racial bonus on all saving throws.
+%Fearless: +2 racial bonus on all saves vs. fear.
+%Keen Senses: +2 racial bonus on Perception checks.
+%Shadowplay: +1 CL on spells with the Darkness, Light, 
+ or Shadow descriptor.
+%Creepy: No size penalty on intimidate vs. larger humanoids.
+
+===𝄞|Spells=================================================
+_Concentration +10 (+12 during bardic peformance)
+_+1 CL on spells with Darkness, Light or Shadow descriptior.
+
+// Blistering Invective, Glitterdust, Heroism, Invisibility,
+// Hold Person??? Enthrall??? Suggestion
+// Mirror Image
+
+!Spell 2nd (3/day) -- Gallant Inspiration (V, +2d4, 
+  attack/skill, 35 ft.), Blistering Invective (DC 17),
+  Glitterdust (150 ft., 10 ft. spread, DC 17)
+!Spell 1st (6/day) -- Technomancy, Silent Image, 
+  Hideous Laughter (DC 16, 35 ft.), Saving Finale…
+  (reroll save, 35 ft.)
+!Spell Cantrips (∞/day) -- Detect Magic, Mending,
+  Prestidigitation, Summon instrument, Ghost Sound, 
+  Dancing Lights
+
+===𝄞|Feats [3 + 1b]=========================================
+// Improved or Greater Dirge of Doom, Blistering Invective 
+// Magical Lineage + Encouraging Spell + Good Hope
+// Signature Skill (Intimidate)
+// Or we go sorcerer / eldrithc heritage???
+// Raksasha, Arcane 
+
+|1 |Lingering Performance: bardic performances last for an…
+    additional 2 rounds.
+|1b|Spell Song: As swift action, use 1 round of bardic…
+    performance to hide spellcasting (Perception or Sense… 
+    Motive vs. Perform). As Move action, use one round of…
+    bardic performance to maintain concentration.…
+    Maintained spell ends when performance ends.
+|3 |Skill Focus: Knowledge Engineering.
+|5 |Eldritch Heritage: Arcane, gain a familiar at CL−2.
+
+===𝄞|Skills [9 + favoured class/level]======================
+// TBD 
+!Skills 
+>   |Acrobatics:            +6  = 1 | +3 | +2 |         
+>   |Appraise:             +11  = 3 | +3 | +3 | +2 (cl) 
+>   |Bluff:                +10  = 2 | +3 | +5 |            
+> 𝅘𝅥𝅮 |Craft [Woodworking]*: +17  = 5 | +3 | +5 | +4 (tr/mwk) 
+>   |Diplomacy:            +12  = 4 | +3 | +5 |            
+> 𝅘𝅥𝅮 |Intimidate †:         +15  = — |  — |  — |    
+>   |Knowledge (arc)  :    +13  = 5 | +3 | +3 | +2 (cl) 
+>   |Knowledge (eng) ‡:    +17  = 5 | +3 | +3 | +6 (tr/ft/cl)
+>   |Knowledge (loc)  :    +10  = 2 | +3 | +3 | +2 (cl) 
+>   |Knowledge (nob):      +10  = 2 | +3 | +3 | +2 (cl) 
+>   |Linguistics :          +9  = 1 | +3 | +3 | +2 (cl) 
+>   |Perception:            +8  = 4 | +3 | −1 | +2 (rc)  
+>   |Perform (String):     +15  = 5 | +3 | +5 | +2 (mwk)
+> 𝅘𝅥𝅮 |Sense Motive †:       +15  = — |  — |  — |         
+>   |Spellcraft:           +11  = 5 | +3 | +3 |         
+>   |Stealth:              +10  = 1 | +3 | +2 | +4 (siz)
+>   |Use Magic Device:     +13  = 5 | +3 | +5 |         
+__*Use Cha instead of Int
+__†Modified by Versatile Performance
+__‡Use as if possessing the Technologist feat.
+
+||=𝄞|Bard Abilities=========================================
+
+@Musical Artificer [Ex] +2 to appraise, knowledge (arc, eng,
+ loc, nob) and linguistics checks. Use Cha instead of Int…
+ on craft skills.
+@Intrument Dependant [ex] Use [S] components with an…
+ instrument in hand.
+@Subtle Performance [ex] Observers do not automatically…
+ recognize bardic performances as anything other than…
+ ordinary performance. If specifically looking for…
+ abnormal effects: DC 17 Sense Motive to notice… 
+ the performances.
+@Stalwart Musician [ex] Do not provoke attacks of…
+ opportunity for using the “Perform” skill. While…
+ maintaining a bardic performance:
+__+2 dodge bonus to AC, +2 on Concentration checks,
+  Evasion.
+@Versatile Performance [Su] Use bonus on Craft…
+ [Woodworking] for Intimidate and Sense Motive.
+
+=𝄞|Bardic performances [15 rounds/day]======================
+//Can be used 2 + 2 × level + Cha rounds per day…
+//DC 10 + 1/2 level [2] + Cha [+5] = 17
+
+_BP is started as a standard cation and maintained as a…
+ free action. It cannot be disturbed but ends immediately…
+ if the bard is prevented from taking a free action.…
+ A bard cannot have more than one BP in effect at one time.…
+ A deaf/blind bard has a 20\%/50\% chance to fail…
+ their peformance.
+_All instrumentalist's bardic performances must be…
+ accompanied by an instrument, even if they soleley rely…
+ on visual components.
+ 
+@Countersong [Su] Each round make a Perform (keyboard, 
+ percussion, wind, string) check, any creature within… 
+ 30 ft. affected by a sonic or language-dependent magical…
+ attack may use the perform result in place of their saving… 
+ throw. Creatures already affected gain a new saving throw…
+ each round, but must use the bards result for the save.…
+ (Relies on audible components.)
+@Fascinate [Su] Creatures within 90 ft., able to hear, see,
+ be seen, and capable of paying attention become…
+ fascinated. DC 17 Will negates and renders creature…
+ immune for 24 hours. (Enchantment [compulsion], 
+ mind-affecting, relies on audible and visible components.)
+@Inspire Courage [Su] Targets able to percieve the bard's…
+ performance receive a +2 competence bonus on attack and…
+ weapon damage rolls, and a +2 morale bonus on saves vs. …
+ charm and fear effects.…
+ (Mind-affecting, relies on audible or visible components.)
+
+=𝄞|Dissonant performance (DC 17)===========================
+
+_For the duration of the performance, invoke a dissonance…
+ as a standard action. May invoke a dissonance on starting…
+ the performance by spending an extra round of bardic…
+ performance.
+ 
+@Cacophonous Chord [Sp] Create a 10 ft. radius burst at…
+ close range (35 ft.), dealing 3d6 sonic damage…
+ (Fort half). This is an evocation (sonic) effect.
+
+@Ruinous Crescendo [Sp] Cast Shatter (35ft., 
+5 ft. spread, Will (Object) / Fort half) as a SLA.
+ 
+=𝄞|Inventory================================================
+
+!Inventory On Person                    
+> +1 Darkleaf Lamellar Armour         |  1810 gp | 12½ lb. 
+> Mwk Rapier                          |    20 gp |   1 lb.
+> Sling + 10 bullets                  |          |  2½ lb.
+> Mwk Violin + Case                   |   100 gp |   1 lb.
+> Mwk Artisan’s tools                 |    55 gp |  2½ lb.
+> +1 Cloak of Resistance              |  1000 gp |   ½ lb
+> Wand of Cure Moderate Wounds [9 Charges]
+> Wand of Grease [10 Charges]
+> Symbol of Brigh
+> White Keycard
+
+!Inventory Backpack
+> Shaving kit                         |    15 gp |   ½ lb. 
+> Backpack + Bedroll                  |     2 gp |  3½ lb.
+> Waterskin                           |          |   1 lb.
+> Flint and Steel                     |     1 gp |
+> Ink, pen and Journal                |    10 gp |   ½ lb. 
+> Mess Kit                            |          |   ½ lb. 
+> Potion of Cure Moderate Wounds
+> 2 Tubes of Tjaptjoi 
+> Scroll of: Shield, Identify, Sound Burst
+> Flash Granade (DC 15 fort, blind 1d4r)
+> Ioun Tape + Zippo
+> Sprocket Sand
+
+_Purse: 2046.7; 4 silverdisks
+
+=𝄞|Inventory================================================
+
+%Uiterlijk: Een bijzonder lange halfling met een hoog… 
+ voorhoofd, fronzende borstelige wenkbrouwen, en diepe…
+ grijze ogen. Zijn halflange peper-en-zout haar hangt…
+ rommelig tot boven zijn schouders. Hij is goed geschoren,
+ maar draagt zijn bakkenbaarden lang. Zijn blik is streng,
+ en een beetje drijgend. Desondanks lacht hij vaak en graag,
+ tenmensite, zolang hij op zijn gemak is.
+%Uitrusting: Draagt doorgaans een net wit overhemd met,
+ zorgvuldig geknoopte das, en gilet, onder een lange…
+ donkerblauwe jas. Zijn hoog-gehakte schoenen zijn goed… 
+ gepoetst. Doorgaans heeft hij een vioolkoffer op… 
+ zijn rug. Zijn lederen pantser, wanneer hij het draagt,
+ is net te groot voor hem, en zijn helm drijgt over zijn…
+ ogen te zakken.
+%Geur: Ludovico ruikt naar rozenwater, vers hout, en …
+ terpentijn.
