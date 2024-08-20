@@ -47,8 +47,8 @@ h1 {
   align-items: center; /* Centers text vertically */
   font-size: 11pt;
   margin-left: -0.2mm;
-  margin-top: 0cm;
-  margin-bottom: 0cm;
+  margin-top: 0;
+  margin-bottom: 0;
   background-image: url('clef.svg');
   background-size: 105%;
   height: 0.4cm;
@@ -56,8 +56,8 @@ h1 {
   padding-bottom: 1mm;
   color: black; /* Text color */
   text-shadow:
-   .5px 0px .5px #ffffff, /* Black shadow for top-left */
-  -.5px 0px .5px #ffffff; /* Black shadow for top-left */
+   .5px 0 .5px #ffffff, /* Black shadow for top-left */
+  -.5px 0 .5px #ffffff; /* Black shadow for top-left */
 }
 
 
