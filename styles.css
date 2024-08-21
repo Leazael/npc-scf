@@ -1,6 +1,9 @@
 :root {
-    --fs-def: 9pt;
-    --fs-large: 10pt;
+  --fs-smol: 7pt;
+  --fs-def: 9pt;
+  --fs-large: 11pt;
+  --line-height: 120%;
+  --indent-size: 5mm;
 }
 
 /* Reset margins and padding */
@@ -8,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: var(--line-height);
 }
 
 /* Ensure no additional margins when printing */
@@ -17,11 +21,14 @@
 
 /* Define the A4 page size with 5mm margins */
 .a4-page {
-  width: 21cm; /* Full width of A4 */
-  height: 29.7cm; /* Full height of A4 */
-  padding: 5mm; /* 5mm padding around content */
+  width: 21cm;
+  /* Full width of A4 */
+  height: 29.7cm;
+  /* Full height of A4 */
+  padding: 5mm;
+  /* 5mm padding around content */
+  /*uncomment to see page edges when debugging*/
   border: 1px solid #000;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,34 +37,49 @@
 /* Typography */
 body {
   font-family: "Corbel", sans-serif;
-  line-height: 1.2;
   font-size: var(--fs-def);
-  margin: 0;
+  line-height: var(--line-height);
   background-color: white;
+  color: black;
 }
 
-/* Header Styling */
-header {
-  text-align: center;
-  padding: 5mm 0;
+
+table {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  font-size: var(--fs-def);
+  line-height: var(--line-height);
 }
+
+th, td {
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-size: inherit;
+  line-height: var(--line-height);
+}
+
+/* header {} */
 
 h1 {
   display: flex;
-  align-items: center; /* Centers text vertically */
-  font-size: 11pt;
-  margin-left: -0.2mm;
-  margin-top: 0cm;
-  margin-bottom: 0cm;
+  align-items: bottom;
+  font-size: var(--fs-large);
+  height: 0.4cm;
+  padding: 0 0 1mm 5.0mm;
+}
+
+.with-clef {
   background-image: url('clef.svg');
   background-size: 105%;
-  height: 0.4cm;
-  padding-left: 0.45cm;
-  padding-bottom: 1mm;
-  color: black; /* Text color */
-  text-shadow:
-   .5px 0px .5px #ffffff, /* Black shadow for top-left */
-  -.5px 0px .5px #ffffff; /* Black shadow for top-left */
+  background-position: -.95mm 0;
+  /* background-clip: none;  */
+
+  background-origin: 0 0;
+  /* Make the background image relative to the content box */
+  /* white shadow for contrast? */
+  text-shadow: 0.5px 0 0.5px #ffffff, -0.5px 0 0.5px #ffffff;
 }
 
 
@@ -65,8 +87,10 @@ h1 {
 .columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 7mm; /* Gap between the two columns */
-  flex-grow: 1; /* Allows the columns to take up available space */
+  gap: 7mm;
+  /* Gap between the two columns */
+  flex-grow: 1;
+  /* Allows the columns to take up available space */
 }
 
 /* Ensuring columns stack content at the top */
@@ -75,41 +99,55 @@ h1 {
   flex-direction: column;
 }
 
-/* Section Content */
-section {
-  margin-bottom: 0;
+p {
+  text-align: justify;
 }
 
-p {
-  text-align: justify; /* Justify text in paragraphs */
+.small {
+  font-size: var(--fs-smol);
 }
+
+.large {
+  font-size: var(--fs-large);
+}
+
 
 .name-title {
   font-weight: bold;
-  font-size: var(--fs-def);
 }
 
-/* Span Styles */
 .bold {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-right {
+  text-align: left;
+}
+
+.indented {
+  padding-left: var(--indent-size);
 }
 
 .alignment-type::after {
-    content: ", ";
+  content: ", ";
 }
 
 .age::before {
-    content: "Age ";
-    font-weight: bold;
+  content: "Age ";
+  font-weight: bold;
 }
 
 .init::before {
-    content: "Init ";
-    font-weight: bold;
+  content: "Init ";
+  font-weight: bold;
 }
 
 .init::after {
-    content: "; ";
+  content: "; ";
 }
 
 .senses::before {
@@ -129,3 +167,49 @@ p {
 .ac-flat-footed::before {
   content: "; Flat-footed ";
 }
+
+.special-def {
+  font-size: var(--fs-smol);
+}
+
+.special-def:before {
+  content: "Special Defences: ";
+  font-weight: bold;
+}
+
+/* Set the first column */
+.table-save td, .table1 th {
+  width: var(--indent-size);
+  text-align: right;
+}
+
+.table-save td:nth-child(1), .table1 th:nth-child(1) {
+  font-weight: bold;
+  text-align: left;
+  width: calc(2 * var(--indent-size));
+}
+
+.table-save td:nth-child(even), .table1 th:nth-child(even) {
+  width: calc(1.5*var(--indent-size));
+  text-align: left;
+  /* background-color: lightgray; */
+}
+
+.table-save td:nth-child(2), .table1 th:nth-child(2),
+.table-save td:nth-child(4), .table1 th:nth-child(4) {
+  text-align: right;
+  width: var(--indent-size);
+}
+
+.table-save td:nth-last-child(2), .table1 th:nth-child(2) {
+  width: calc(2*var(--indent-size));
+  font-weight: bold;
+  text-align: right;
+}
+
+.table-save td:nth-last-child(1), .table1 th:nth-child(1) {
+  width: auto;
+  text-align: left;
+}
+
+

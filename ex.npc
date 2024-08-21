@@ -7,7 +7,7 @@ Male halfling Bard (Instrumentalist/Cacophist) 5
 
 !AC 18 [20], !Touch 13 [15], !FlatFooted 16
 __(+2 Dex, +5 Armour, +1 Size, [+2 dodge])
-!hp 35 + 1d8 = 5d8 + 5 [8, 8, 7, 7, ?]
+!hp 35 + 1d8 = 5d8 + 5 [8, 8, 7, 7, ?] 
  > Fort:   +4 = +1 | +1 Con | +1/+1 (luck/res)
  > Ref:   *+8 = +4 | +2 Dex | +1/+1 (luck/res)
  > Will:   +5 = +4 | −1 Wis | +1/+1 (luck/res)
@@ -89,10 +89,11 @@ _+1 CL on spells with Darkness, Light or Shadow descriptior.
 // TBD 
 !Skills 
 >   |Acrobatics:            +6  = 1 | +3 | +2 |         
->   |Appraise:             +11  = 3 | +3 | +3 | +2 (cl) 
+>   |Appraise:             +13  = 2 | +3 | +3 | +5 (cl/fam) 
 >   |Bluff:                +10  = 2 | +3 | +5 |            
 > 𝅘𝅥𝅮 |Craft [Woodworking]*: +17  = 5 | +3 | +5 | +4 (tr/mwk) 
->   |Diplomacy:            +12  = 4 | +3 | +5 |            
+>   |Diplomacy:            +12  = 4 | +3 | +5 |  
+>   |Fly:                   +6  = 1 | +3 | +2 |  
 > 𝅘𝅥𝅮 |Intimidate †:         +15  = — |  — |  — |    
 >   |Knowledge (arc)  :    +13  = 5 | +3 | +3 | +2 (cl) 
 >   |Knowledge (eng) ‡:    +17  = 5 | +3 | +3 | +6 (tr/ft/cl)
@@ -205,7 +206,7 @@ _For the duration of the performance, invoke a dissonance…
 
 _Purse: 2046.7; 4 silverdisks
 
-=𝄞|Inventory================================================
+=𝄞|Notes====================================================
 
 %Uiterlijk: Een bijzonder lange halfling met een hoog… 
  voorhoofd, fronzende borstelige wenkbrouwen, en diepe…
