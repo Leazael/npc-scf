@@ -20,7 +20,7 @@
 }
 
 /* Define the A4 page size with 5mm margins */
-.a4-page {
+.page {
   width: 21cm;
   /* Full width of A4 */
   height: 29.7cm;
@@ -32,6 +32,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  page-break-after: always;
 }
 
 /* Typography */
@@ -71,7 +72,7 @@ h1 {
 }
 
 .with-clef {
-  background-image: url('clef.svg');
+  background-image: url('img/clef.svg');
   background-size: 105%;
   background-position: -.95mm 0;
   /* background-clip: none;  */
@@ -190,7 +191,7 @@ p {
 }
 
 .table-save td:nth-child(even), .table1 th:nth-child(even) {
-  width: calc(1.5*var(--indent-size));
+  width: calc(1*var(--indent-size));
   text-align: left;
   /* background-color: lightgray; */
 }

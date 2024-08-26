@@ -1,0 +1,253 @@
+{
+  "inputSettings":
+  {
+    "comment": ["//"],
+    "row": [">"],
+    "concatenators": [
+      {
+        "match": ["...", "…"],
+        "remove": true,
+        "addWhitespace": true
+      },
+      {
+        "match": ["-"],
+        "remove": true,
+        "addWhitespace": false
+      },
+      {
+        "match": [",", ";"],
+        "remove": false,
+        "addWhitespace": true
+      }
+    ]
+  },
+  "parseSettings":
+  { 
+    "keyword": ["!"], 
+    "var": "var#", 
+    "tableVar": "tab#",
+    "tableColDelim": "||",
+    "tableRowDelim": "&&"
+  },
+  "mappings": [
+    {
+      "description": "Keyword: name",
+      "matchList": ["!name"],
+      "cmd": "section(`var#2`)"
+    },
+    {
+      "description": "Keyword: Alignment + Age",
+      "matchList": [["!LG", "!NG", "!CG", "!LN", "!N", "!TN", "!CN", "!LE", "!NE", "!CE"], "!Age"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "textStandard(`var#1 var#2, <span class=\"bold\">Age:</span> var#4`)"
+    },
+    {
+      "description": "Keyword: initiative + senses",
+      "matchList": ["!init", "!senses"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "textStandard(`<span class=\"bold\">Init</span> var#2; <span class=\"bold\">Senses</span> var#4`)"
+    },
+    {
+      "description": "Keyword: AC",
+      "matchList": ["!AC", "!touch", "!FlatFooted"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "textStandard(`<span class=\"bold\">AC</span> var#2, Touch var#4, Flat-footed var#6`)"
+    },
+    {
+      "description": "Keyword: hp and save table",
+      "matchList": ["!hp", "=", "[", "]"],
+      "table": {"delimiters": [":", "=", "|"], "repeat": true},      
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: hp simple",
+      "matchList": ["!hp"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: vp/wp/dr",
+      "matchList": ["!vp", "!wp", "!dr"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: vp/wp",
+      "matchList": ["!vp", "!wp"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: saves",
+      "matchList": ["!fort", "!ref", "!will"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: Fas Healing + Dr",
+      "matchList": ["!FastHealing", "!DR"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: Resistances",
+      "matchList": [["!Resist", "!Immune"]],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: Spped + Carrying Capacity",
+      "matchList": ["!speed", ["!CarryingCapacity", "!carry"]],
+      "stripChars": [",", ";", ":"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: Space + Reach",
+      "matchList": ["!space", "!reach"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: Speed",
+      "matchList": ["!speed"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: attack table",
+      "matchList": [["!Melee", "!Ranged"]],
+      "table": {"delimiters": ["|"], "repeat": true},
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: attack",
+      "matchList": [["!Melee", "!Ranged"]],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: ability score table",
+      "matchList": [["!abilityscores", "!abilities"]],
+      "table": {"delimiters": ["(", ")", "=", "|"], "repeat": true},
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: ability scores",
+      "matchList": ["!str", "!dex", "!con", "!int", "!wis", "!cha"],
+      "stripChars": [",",";",":"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: BAB + CMB + CMD",
+      "matchList": ["!bab", "!cmb", "!cmd"],
+      "stripChars": [",", ";"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: Feats table",
+      "matchList": ["!Feats"],
+      "table": {"delimiters": ["|", ":"], "repeat": false},
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: Feats simle",
+      "matchList": ["!Feats"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "//TBD"
+    },
+   {
+      "description": "Keyword: skills table",
+      "matchList": ["!Skills"],
+      "table": {"delimiters": ["|", ":", "=", "|"], "repeat": true},
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: skills simple",
+      "matchList": ["!Skills"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Keyword: inventory table",
+      "matchList": ["!Inventory"],
+      "table": {"delimiters": ["|"], "repeat": true}, 
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Labelled pagebreak Category",
+      "matchList": [["||=", "╠═"], "|"],
+      "stripChars": ["=","═"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Labelled Category",
+      "matchList": [["=","═"], "|"],
+      "stripChars": ["=","═"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Category",
+      "matchList": [["=","═"]],
+      "stripChars": ["=","═"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Category Break",
+      "matchList": [["||=", "╠═"]],
+      "stripChars": ["=","═"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Primary Text + Header.",
+      "matchList": ["#", [":","--"]],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Secondary Text + Header + indent",
+      "matchList": ["%%", [":","--"]],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Secondary Text + Header",
+      "matchList": ["%", [":","--"]],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Secondary text + indent",
+      "matchList": ["__"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Secondary text",
+      "matchList": ["_"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Daily Spells and Spell-like abilities.",
+      "matchList": ["!Spell", ["[","("], ["]",")"], [":", "--"]],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Prepared/at-will spells and spell-like abilities.",
+      "matchList": ["!Spell", [":", "--"]],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Special Abilities that can be used a certain nr. of times per day.",
+      "matchList": ["@", "[", "]", "{", "}"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Constant or at-will Special Abilities",
+      "matchList": ["@", "[", "]"],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Empty Line",
+      "matchList": [ "~~" ],
+      "cmd": "//TBD"
+    },
+    {
+      "description": "Primary text (default!)",
+      "matchList": [],
+      "cmd": "textStandard(`var#1`)"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+section(`Ludovico Zanni (Level 5)`)
+textStandard(`Male halfling Bard (Instrumentalist/Cacophist) 5`)
+textStandard(`NG Small Humanoid (Halfling), <span class="bold">Age:</span> 61`)
+textStandard(`<span class="bold">Init</span> +2; <span class="bold">Senses</span> Perception +8`)
+//TBD
+textStandard(`<span class="bold">AC</span> 18 [20], Touch 13 [15], Flat-footed 16`)
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
+//TBD
