@@ -12,7 +12,7 @@ function parse_content(d::NpcLine, mp::Mapping, pSettings::ParseSettings)
     isMatch = map(isodd, 1:length(result))
 
     result[isKw .&& isMatch] = match_strip(result[isKw .&& isMatch], pSettings.keyword) # Strip keywords of the !
-    deleteat!(result, isKw .&&  (.!isMatch)) # delete non-keyword matches.
+    deleteat!(result, (.!isKw) .&&  isMatch) # delete non-keyword matches.
     
     return result
 end
@@ -31,8 +31,8 @@ parse_table(d::NpcLine, mp::Mapping, pSettings::ParseSettings) = join(map(r -> p
 function replace_cmd(cmd::String, varStr::String, content::Vector{<:AbstractString})
     if any(c -> contains(c, varStr), content)
         error(".npc file cannot contain \"$(varStr)\"")
-    end
-    return replace(cmd, ["$(varStr)$k" => content[k] for k in eachindex(content)]...)
+    end #make sure to reverse the replace to handle 2-digit numbers
+    return replace(cmd, ["$(varStr)$k" => content[k] for k in reverse(eachindex(content))]...)
 end
 
 function parse_cmd(d::NpcLine, mappings::Vector{Mapping}, pSettings::ParseSettings)
@@ -40,9 +40,10 @@ function parse_cmd(d::NpcLine, mappings::Vector{Mapping}, pSettings::ParseSettin
         content = parse_content(d, mp, pSettings)
         if !isnothing(content)
             cmd = replace_cmd(mp.cmd, pSettings.var, content)
+            cmd = replace(cmd, pSettings.descriptionVar => mp.description)
             if istable(mp)
                 tabContent = parse_table(d, mp, pSettings)
-                replace(cmd, pSettings.tableVar => tabContent)
+                cmd = replace(cmd, pSettings.tableVar => tabContent)
             end
             return cmd
         end
@@ -58,7 +59,6 @@ function parse_npc(config::NpcConfig, npc::Vector{NpcLine}, fileOut::String)
         end
     end
 end
-
 
 function parse_npc(json::String, fileIn::String, fileOut::String)
     config = read_config(json)

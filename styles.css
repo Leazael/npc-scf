@@ -1,9 +1,10 @@
 :root {
-  --fs-smol: 7pt;
-  --fs-def: 9pt;
-  --fs-large: 11pt;
+  --fs-smol: 8pt;
+  --fs-def: 10pt;
+  --fs-large: 12pt;
   --line-height: 120%;
-  --indent-size: 5mm;
+  --indent-size: 6mm;
+  --break-height: calc(var(--fs-large) );
 }
 
 /* Reset margins and padding */
@@ -44,7 +45,6 @@ body {
   color: black;
 }
 
-
 table {
   border-collapse: collapse;
   margin: 0;
@@ -66,23 +66,19 @@ th, td {
 h1 {
   display: flex;
   align-items: bottom;
-  font-size: var(--fs-large);
-  height: 0.4cm;
-  padding: 0 0 1mm 5.0mm;
+  font-size: var(--fs-def);
+  height: var(--break-height);
 }
 
-.with-clef {
-  background-image: url('img/clef.svg');
-  background-size: 105%;
-  background-position: -.95mm 0;
-  /* background-clip: none;  */
-
-  background-origin: 0 0;
-  /* Make the background image relative to the content box */
-  /* white shadow for contrast? */
-  text-shadow: 0.5px 0 0.5px #ffffff, -0.5px 0 0.5px #ffffff;
+.with-bars { 
+    background-image: 
+        linear-gradient(black, black), /* Top line */
+        linear-gradient(black, black); /* Bottom line */
+    background-size: 100% 1px, 100% 1px; /* Thickness of the lines */
+    background-position: top center, bottom center; /* Positioning of the lines */
+    background-repeat: no-repeat;  
+    padding: 0 0 1mm 0;
 }
-
 
 /* Two-column Layout */
 .columns {
@@ -104,6 +100,14 @@ p {
   text-align: justify;
 }
 
+.primary-text {
+  font-size: var(--fs-def);
+}
+
+.secondary-text {
+  font-size: var(--fs-smol);
+}
+
 .small {
   font-size: var(--fs-smol);
 }
@@ -111,7 +115,6 @@ p {
 .large {
   font-size: var(--fs-large);
 }
-
 
 .name-title {
   font-weight: bold;
@@ -121,11 +124,15 @@ p {
   font-weight: bold;
 }
 
+.italics {
+  font-style: italic;
+}
+
 .align-right {
   text-align: right;
 }
 
-.align-right {
+.align-left {
   text-align: left;
 }
 
@@ -133,84 +140,154 @@ p {
   padding-left: var(--indent-size);
 }
 
-.alignment-type::after {
-  content: ", ";
+.fixed-width {
+  width: var(--indent-size)
 }
 
-.age::before {
-  content: "Age ";
-  font-weight: bold;
-}
+/* The HP + saves table */
 
-.init::before {
-  content: "Init ";
-  font-weight: bold;
-}
-
-.init::after {
-  content: "; ";
-}
-
-.senses::before {
-  content: "Senses ";
-  font-weight: bold;
-}
-
-.ac-full::before {
-  content: "AC ";
-  font-weight: bold;
-}
-
-.ac-touch::before {
-  content: "; Touch ";
-}
-
-.ac-flat-footed::before {
-  content: "; Flat-footed ";
-}
-
-.special-def {
-  font-size: var(--fs-smol);
-}
-
-.special-def:before {
-  content: "Special Defences: ";
-  font-weight: bold;
-}
-
-/* Set the first column */
 .table-save td, .table1 th {
   width: var(--indent-size);
   text-align: right;
 }
 
-.table-save td:nth-child(1), .table1 th:nth-child(1) {
+.table-save td:nth-child(1) {
   font-weight: bold;
   text-align: left;
-  width: calc(2 * var(--indent-size));
+  width: calc(var(--indent-size));
 }
 
-.table-save td:nth-child(even), .table1 th:nth-child(even) {
-  width: calc(1*var(--indent-size));
+.table-save td:nth-child(even) {
+  width: calc(var(--indent-size));
   text-align: left;
-  /* background-color: lightgray; */
 }
 
-.table-save td:nth-child(2), .table1 th:nth-child(2),
-.table-save td:nth-child(4), .table1 th:nth-child(4) {
+.table-save td:nth-child(2),
+.table-save td:nth-child(4) {
   text-align: right;
   width: var(--indent-size);
 }
 
-.table-save td:nth-last-child(2), .table1 th:nth-child(2) {
+/* For the hp part after the table */
+
+.table-save td:nth-last-child(2) {
   width: calc(2*var(--indent-size));
   font-weight: bold;
   text-align: right;
 }
 
-.table-save td:nth-last-child(1), .table1 th:nth-child(1) {
+.table-save td:nth-last-child(1) {
   width: auto;
   text-align: left;
 }
 
+/* Attack Table */
 
+.table-attack {
+  margin-left: var(--indent-size);
+}
+
+.table-attack td {
+  text-align: left;
+  padding-left: var(--indent-size);
+  width: auto;
+}
+
+.table-attack td:nth-child(1) {
+  text-align: left;
+  padding-left: 0;
+  width: calc(4*var(--indent-size));
+}
+
+.table-attack td:nth-child(2) {
+  text-align: right;
+  padding-left: 0;
+  width: calc(4*var(--indent-size));
+}
+
+/* Ability Score Table */
+
+.table-ability td:nth-child(1) {
+  font-weight: bold;
+  width: calc(var(--indent-size));
+}
+
+.table-ability td {
+  width: calc(var(--indent-size));
+}
+
+.table-ability td:nth-child(even) {
+  text-align: right;
+}
+
+.table-ability td:nth-child(3), .table-ability td:nth-child(5) {
+  text-align: right;
+}
+
+/* Feats Table */
+
+.table-feats td, th{
+  font-size: var(--fs-smol);
+  vertical-align: top;
+}
+
+.table-feats td:first-child{
+  width: var(--indent-size);
+}
+
+/* Skill Table */
+
+.table-skill td, th{
+  font-size: var(--fs-smol);
+  vertical-align: top;
+  width: var(--indent-size);
+  text-align: right;
+}
+
+.table-skill tr:first-child, th:first-child{
+  font-weight: normal;
+  font-style: italic;
+}
+
+.table-skill td:nth-child(1){
+  text-align: left;
+}
+
+.table-skill td:nth-child(2){
+  width: calc(5*var(--indent-size));
+  text-align: left;
+}
+
+.table-skill tr:not(:first-child) td:nth-child(2) {
+  font-weight: bold;
+}
+
+.table-skill td:last-child{
+  width: auto;
+  text-align: left;
+  padding-left: var(--indent-size);
+}
+
+/* Inventory Tables */
+
+.table-inventory {
+  font-size: var(--fs-smol);
+  width: 100%;
+}
+
+.table-inventory td{
+  width: calc(3*var(--indent-size));
+  text-align: right;
+}
+
+.table-inventory td:first-child{
+  width: calc(100% - 2*3*var(--indent-size));
+  text-align: left;
+}
+
+/* spells */
+.spell-style {
+  font-size: var(--fs-smol);
+  text-indent: calc(-1*var(--indent-size)); /* Removes indent from the first line */
+  padding-left: var(--indent-size); /* Indents all lines to the right */
+}

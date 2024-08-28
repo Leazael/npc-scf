@@ -20,8 +20,7 @@ end
 
 find_row(inSettings::InputSettings, ll::NpcLine) = match_first(inSettings.row, ll.content, true)
 
-# only keep characters to the left of any comment 
-comment(str::Match, inSettings::InputSettings) = split(str, rex(inSettings.comment); limit = 2) |> first |> strip
+comment(str::Match, inSettings::InputSettings) = split(str, rex(inSettings.comment); limit = 2) |> first |> strip # only keep characters to the left of any comment
 
 function read_npc(fileLoc::AbstractString, inSettings::InputSettings)
     data = NpcLine[] # read the data line by line, with commenting and pruning.
@@ -32,25 +31,25 @@ function read_npc(fileLoc::AbstractString, inSettings::InputSettings)
         end
     end
 
-    k = 2
-    while k ≤ length(data) # concantenate lines that need concatenating.
-        res = concatenate(inSettings, data[k-1], data[k])
+    k = 1
+    while k < length(data) # concantenate lines that need concatenating.
+        res = concatenate(inSettings, data[k], data[k+1])
         if isnothing(res) # no concantenation
             k += 1
         else 
-            data[k-1] = res
-            deleteat!(data, k)
+            data[k] = res
+            deleteat!(data, k+1)
         end
     end
 
-    k = 2
-    while k ≤ length(data) # it the line is part of a row, add it to the previous entry table
-        res = find_row(inSettings, data[k])
+    k = 1
+    while k < length(data) # it the line is part of a row, add it to the previous entry table
+        res = find_row(inSettings, data[k+1])
         if isnothing(res) #does not start with a row-char.
             k += 1
         else
-            push!(data[k-1].table, res)
-            deleteat!(data, k)
+            push!(data[k].table, res)
+            deleteat!(data, k+1)
         end
     end
 

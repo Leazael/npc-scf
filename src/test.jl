@@ -5,6 +5,7 @@ include("npc-read.jl")
 include("npc-parse.jl")
 
 config = read_config("json/npc_config.json")
-npc = read_npc("npc/Ludo.npc", config.inputSettings)
+npc = read_npc("test.npc", config.inputSettings)
+parse_npc("json/npc_config.json", "test.npc", "npc.js")
 
-parse_npc(config, npc, "npc.js")
+

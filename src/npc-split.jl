@@ -18,7 +18,12 @@ function match_last(mt::Match, s::AbstractString, remove::Bool)
 end
 
 function match_split(mm::Vector{Match}, s::AbstractString; fromstart::Bool = false, repeat::Bool = false, discardmatch = false) 
-    m = match(rex(repeat ? mm[1:end-1] : mm ), s)
+    if repeat #if the match is repeated, and of length 1 then a workaround is needed
+        m = length(mm) == 1 ? match(r"(.*)", s) : match(rex(mm[1:end-1]), s)
+    else 
+        m = match(rex(mm), s)
+    end
+
     if isnothing(m)
         return nothing 
     end
