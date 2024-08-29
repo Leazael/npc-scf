@@ -1,5 +1,5 @@
 function parse_content(d::NpcLine, mp::Mapping, pSettings::ParseSettings)
-    result = match_split(mp.matchList, d.content; fromstart = true)
+    result = match_split(mp.pattern, d.content; fromstart = true)
     if isnothing(result) || istable(mp) != hastable(d) # There is no match.
         return nothing 
     end

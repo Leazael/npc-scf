@@ -4,8 +4,12 @@ include("npc-split.jl")
 include("npc-read.jl")
 include("npc-parse.jl")
 
-config = read_config("json/npc_config.json")
-npc = read_npc("test.npc", config.inputSettings)
-parse_npc("json/npc_config.json", "test.npc", "npc.js")
+# config = read_config("config/npc_config_html.json")
+# npc = read_npc("npc/example.npc", config.inputSettings)
+# parse_npc(config, npc, "js/npc.js")
+
+parse_npc("config/npc_config_html.json", "npc/example.npc", "html/example.js")
+
+parse_npc("config/npc_config_tex.json", "npc/example.npc", "tex/example.tex")
 
 

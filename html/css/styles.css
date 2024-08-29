@@ -185,6 +185,7 @@ p {
 
 .table-attack {
   margin-left: var(--indent-size);
+  font-size: var(--fs-smol);
 }
 
 .table-attack td {

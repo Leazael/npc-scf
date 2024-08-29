@@ -1,10 +1,11 @@
 # Create the structs and bindings for the JSON parsing.
 
 const Match = Union{String,Vector{String}}
+const Pattern = Vector{Match}
 rex_str(m::Vector{String}) = "(\\Q" * join( escape_string.(m), "\\E|\\Q") * "\\E)"
 rex_str(m::String) = rex_str([m])
 rex(m::Match) = Regex(rex_str(m), "i")
-rex(mm::Vector{Match}) = isempty(mm) ? Regex("()()(.*)") :  Regex("(.*?)" * join(rex_str.(mm), "(.*)") * "(.*)", "i")
+rex(mm::Pattern) = isempty(mm) ? Regex("()()(.*)") :  Regex("(.*?)" * join(rex_str.(mm), "(.*)") * "(.*)", "i")
 match_strip(s::AbstractString, m::Match) = strip(s, collect(join(m) * " "))
 match_strip(ss::Vector{<:AbstractString}, m::Match) = map(s -> match_strip(s, m), ss)
 
@@ -30,29 +31,29 @@ struct ParseSettings
 end
 
 struct TableSettings
-    delimiters::Vector{Match}
+    delimiters::Pattern
     repeat::Bool 
     TableSettings(delim, repeat) = new(vcat(Match[], delim), repeat)
 end  
 
 struct Mapping
     description::String
-    matchList::Vector{Match}
+    pattern::Pattern
     cmd::String
     stripChars::Match
     table::Union{TableSettings, Nothing}
-    function Mapping(description, matchList, cmd, stripChars, table)
+    function Mapping(description, pattern, cmd, stripChars, table)
         # println(description)
         return new(
             description,
-            vcat(Match[], matchList),
+            vcat(Match[], pattern),
             cmd,
             isnothing(stripChars) ? String[] : stripChars,
             table)
     end
 end
 istable(mp::Mapping) = !isnothing(mp.table)
-istrivial(mp::Mapping) = isempty(mp.matchList)
+istrivial(mp::Mapping) = isempty(mp.pattern)
 
 struct NpcConfig
     inputSettings::InputSettings

@@ -95,6 +95,10 @@ function sectionBreak(content) {
   return sectionNewColumn(sectionHead(content));
 };
 
+function sectionBreakLabel(label, content) {
+  return sectionNewColumn(sectionHeadLabel(label, content));
+};
+
 //
 
 function specialAbility(name, content) {
