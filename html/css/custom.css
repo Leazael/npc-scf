@@ -1,0 +1,26 @@
+.with-clef {
+  background-image: url('img/clef.svg');
+  background-size: 110%;
+  background-position: -.2mm 0;
+  /* background-clip: none;  */
+  font-size: var(--fs-large);
+
+  background-origin: 0 0;
+  /* Make the background image relative to the content box */
+  /* white shadow for contrast? */
+  text-shadow: 0.5px 0 0.5px #ffffff, -0.5px 0 0.5px #ffffff;
+  padding: 0 0 1mm var(--indent-size);
+}
+
+.with-clef-label {
+  display: flex; /* Enables flexbox layout */
+  justify-content: space-between; /* Distributes space between items */
+}
+
+.left-text {
+  flex-shrink: 0; /* Prevents the first text from shrinking */
+}
+
+.right-text {
+  flex-shrink: 0; /* Prevents the second text from shrinking */
+}

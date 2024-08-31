@@ -1,0 +1,265 @@
+{
+  "inputSettings":
+  {
+    "comment": ["//"],
+    "row": [">"],
+    "concatenators": [
+      {
+        "match": ["...", "…"],
+        "remove": true,
+        "addWhitespace": true
+      },
+      {
+        "match": ["-"],
+        "remove": true,
+        "addWhitespace": false
+      },
+      {
+        "match": [",", ";"],
+        "remove": false,
+        "addWhitespace": true
+      }
+    ]
+  },
+  "parseSettings":
+  { 
+    "keyword": ["!"], 
+    "var": "var#", 
+    "tableVar": "tab#",
+    "descriptionVar": "dsc#",
+    "tableColDelim": "||",
+    "tableRowDelim": "&&"
+  },
+  "mappings": [
+    {
+      "description": "Keyword: name",
+      "pattern": ["!name"],
+      "cmd": "sectionName(`var#2`); //dsc#"
+    },
+    {
+      "description": "Keyword: Alignment + Age",
+      "pattern": [["!LG", "!NG", "!CG", "!LN", "!N", "!TN", "!CN", "!LE", "!NE", "!CE"], "!Age"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "textPrimary(`var#1 var#2, <span class=\"bold\">Age:</span> var#4`); //dsc#"
+    },
+    {
+      "description": "Keyword: AC",
+      "pattern": ["!AC", "!touch", "!FlatFooted"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "textPrimary(`<span class=\"bold\">AC</span> var#2, Touch var#4, Flat-footed var#6`); //dsc#"
+    },
+    {
+      "description": "Keyword: hp and save table",
+      "pattern": ["!hp", "=", "[", "]"],
+      "table": {"delimiters": [":", "=", ["_", "|"]], "repeat": true},      
+      "cmd": "hpSavesTable(`var#2`, `var#3`, `var#4`, `tab#`); //dsc#"
+    },
+    {
+      "description": "Keyword: Three Bold Keywords",
+      "pattern": [["!vp", "!fort"], ["!wp", "!ref"], ["!dr", "!will"]],
+      "stripChars": [",", ";", ":"],
+      "cmd": "alternateBold(`;`, `var#1`, `var#2`, `var#3`, `var#4`, `var#5`, `var#6`); //dsc#"
+    },
+    {
+      "description": "Keyword: Two Bold Keywords",
+      "pattern": [["!vp", "!hp", "!resist", "!space", "!init"], ["!wp", "!dr", "!immune", "!reach", "!senses"]],
+      "stripChars": [",", ";", ":"],
+      "cmd": "alternateBold(`;`, `var#1`, `var#2`, `var#3`, `var#4`); //dsc#"
+    },
+    {
+      "description": "Keyword: Fast Healing + DR",
+      "pattern": ["!FastHealing", "!DR"],
+      "stripChars": [",", ";", ":"],
+      "cmd": "alternateBold(`;`, `Fast Healing`, `var#2`, `DR`, `var#4`); //dsc#"
+    },
+    {
+      "description": "Keyword: Speed + Carrying Capacity",
+      "pattern": ["!speed", ["!CarryingCapacity", "!carry"]],
+      "stripChars": [",", ";", ":"],
+      "cmd": "alternateBold(`;`, `Speed`, `var#2`, `Carrying Capacity`, `var#4`); //dsc#"
+    },
+    {
+      "description": "Keyword: One Bold Keyword",
+      "pattern": [["!hp", "!speed", "!melee", "!ranged"]],
+      "stripChars": [",", ";", ":"],
+      "cmd": "alternateBold(`;`, `var#1`, `var#2`); //dsc#"
+    },
+    {
+      "description": "Keyword: attack table",
+      "pattern": [["!Melee", "!Ranged"]],
+      "table": {"delimiters": ["|"], "repeat": true},
+      "cmd": "attackTable(`var#1`, `var#2`, `tab#`); //dsc#"
+    },
+    {
+      "description": "Keyword: ability score table",
+      "pattern": [["!abilityscores", "!abilities"]],
+      "table": {"delimiters": ["(", ")", "=", ["|", "_"]], "repeat": true},
+      "cmd": "abilityScoreTable(`tab#`); //dsc#"
+    },
+    {
+      "description": "Keyword: ability scores",
+      "pattern": ["!str", "!dex", "!con", "!int", "!wis", "!cha"],
+      "stripChars": [",",";",":"],
+      "cmd": "alternateBold(`,`, `Str`, `var#2`, `Dex`, `var#4`, `Con`, `var#6`, `Int`, `var#8`, `Wis`, `var#10`, `Cha`, `var#12`); //dsc#"
+    },
+    {
+      "description": "Keyword: BAB + CMB + CMD",
+      "pattern": ["!bab", "!cmb", "!cmd"],
+      "stripChars": [",", ";"],
+      "cmd": "alternateBold(`;`, `Base Attack`, `var#2`, `CMB`, `var#4`, `CMD`, `var#6`); //dsc#"
+    },
+    {
+      "description": "Keyword: secondary text, one bold keyword.",
+      "pattern": [["!Feats", "!Skills", "!Inventory"]],
+      "stripChars": [",", ";", ":"],
+      "cmd": "textSecondary(`<span class=\"bold\">var#1</span> var#2`); //dsc#"
+    },
+    {
+      "description": "Keyword: Feats table",
+      "pattern": ["!Feats"],
+      "table": {"delimiters": ["|", ":"], "repeat": false},
+      "cmd": "featsTable(`tab#`); //dsc#"
+    },
+    {
+      "description": "Keyword: Skills table",
+      "pattern": ["!Skills"],
+      "table": {"delimiters": ["|", ":", "=", "|"], "repeat": true},
+      "cmd": "skillTable(`tab#`); //dsc#"
+    },
+    {
+      "description": "Keyword: inventory table",
+      "pattern": ["!Inventory"],
+      "table": {"delimiters": ["|"], "repeat": true}, 
+      "cmd": "inventoryTable(`var#2`, `tab#`); //dsc#"
+    },
+    {
+      "description": "Header: Labelled pagebreak",
+      "pattern": [["||=", "╠═"], "|"],
+      "stripChars": ["=","═"],
+      "cmd": "sectionBreakLabel(`var#1`, `var#2`); //dsc#"
+    },
+    {
+      "description": "Header: Break",
+      "pattern": [["||=", "╠═"]],
+      "stripChars": ["=","═"],
+      "cmd": "sectionBreak(`var#1`); //dsc#"
+    },
+    {
+      "description": "Header: Labelled",
+      "pattern": [["=","═"], "|"],
+      "stripChars": ["=","═"],
+      "cmd": "sectionLabel(`var#1`, `var#2`); //dsc#"
+    },
+    {
+      "description": "Header: Standard",
+      "pattern": [["=","═"]],
+      "stripChars": ["=","═"],
+      "cmd": "section(`var#1`); //dsc#"
+    },
+    {
+      "description": "Secondary Text + Bold Label.",
+      "pattern": ["%", [":","--"]],
+      "cmd": "textSecondary(`<span class=\"bold\">var#1</span> var#2`); //dsc#"
+    },
+    {
+      "description": "Secondary Text Bold",
+      "pattern": ["%%"],
+      "cmd": "textSecondary(`<span class=\"bold\">var#1</span>`); //dsc#"
+    },
+    {
+      "description": "Secondary Text",
+      "pattern": ["%"],
+      "cmd": "textSecondary(`var#1`); //dsc#"
+    },
+    {
+      "description": "Secondary Text Indented + Bold Label",
+      "pattern": ["_%", [":","--"]],
+      "cmd": "textSecondaryIndent(`<span class=\"bold\">var#1</span> var#2`); //dsc#"
+    },
+    {
+      "description": "Secondary Text Bold Indented",
+      "pattern": [["_%%"]],
+      "cmd": "textSecondaryIndent(`<span class=\"bold\">var#1</span>`); //dsc#"
+    },
+    {
+      "description": "Secondary Text Indented",
+      "pattern": [["_%", "__"]],
+      "cmd": "textSecondaryIndent(`var#1`); //dsc#"
+    },
+    {
+      "description": "Primary Text + Bold Label.",
+      "pattern": ["#", [":","--"]],
+      "cmd": "textPrimary(`<span class=\"bold\">var#1</span> var#2`); //dsc#"
+    },
+    {
+      "description": "Primary Text Bold",
+      "pattern": ["##"],
+      "cmd": "textPrimary(`<span class=\"bold\">var#1</span>`); //dsc#"
+    },
+    {
+      "description": "Primary Text",
+      "pattern": ["#"],
+      "cmd": "textPrimary(`var#1`); //dsc#"
+    },
+    {
+      "description": "Primary Text Indented + Bold Label",
+      "pattern": ["_#", [":","--"]],
+      "cmd": "textPrimaryIndent(`<span class=\"bold\">var#1</span> var#2`); //dsc#"
+    },
+    {
+      "description": "Primary Text Bold Indented",
+      "pattern": ["_##"],
+      "cmd": "textPrimaryIndent(`<span class=\"bold\">var#1</span>`); //dsc#"
+    },
+    {
+      "description": "Primary Text Indented",
+      "pattern": [["_#", "_"]],
+      "cmd": "textPrimaryIndent(`var#1`); //dsc#"
+    },
+    {
+      "description": "Spell: Daily and SLA",
+      "pattern": ["!Spell", ["[","("], ["]",")"], [":", "--"]],
+      "cmd": "spellDaily(`var#2`, `var#3`, `var#5`); //dsc#"
+    },
+    {
+      "description": "Spell: Prepared/at-will spells and spell-like abilities",
+      "pattern": ["!Spell", [":", "--"]],
+      "cmd": "spellPrepared(`var#2`, `var#3`); //dsc#" 
+    },
+    {
+      "description": "Spell: Spell-like abilities.",
+      "pattern": ["!SLA", [":", "--"]],
+      "cmd": "spellLikeAbility(`var#2`,`var#3`); //dsc#"
+    },
+    {
+      "description": "Ability: Special Abilities that can be used a certain nr. of times per day.",
+      "pattern": ["@", "[", "]", "{", "}"],
+      "cmd": "specialAbility(`var#1 [var#2]`, `(var#4) var#5`); //dsc#"
+    },
+    {
+      "description": "Ability: Constant or at-will Special Abilities",
+      "pattern": ["@", "[", "]"],
+      "cmd": "specialAbility(`var#1 [var#2]`, `var#3`); //dsc#"
+    },
+    {
+      "description": "Ability: Generic Special Abilities",
+      "pattern": ["@", [":", "--"]],
+      "cmd": "specialAbility(`var#1`, `var#2`); //dsc#"
+    },
+    {
+      "description": "Empty Line of Secondary Size",
+      "pattern": [ "~~" ],
+      "cmd": "newLineSecondary(); //dsc#"
+    },
+    {
+      "description": "Empty Line of Primary Size",
+      "pattern": [ "~" ],
+      "cmd": "newLinePrimary(); //dsc#"
+    },
+    {
+      "description": "Primary text (default!)",
+      "pattern": [],
+      "cmd": "textPrimary(`var#1`); //dsc#"
+    }
+  ]
+}

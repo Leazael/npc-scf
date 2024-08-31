@@ -1,4 +1,4 @@
-!Name Ludovico Zanni (Level 5)
+!Name Ludovico Zanni (Level 5) // And Nothing
 Male halfling Bard (Instrumentalist/Cacophist) 5
 !NG Small Humanoid (Halfling), !Age 61
 !Init +2; !Senses Perception +8
@@ -7,10 +7,10 @@ Male halfling Bard (Instrumentalist/Cacophist) 5
 
 !AC 18 [20], !Touch 13 [15], !FlatFooted 16
 __(+2 Dex, +5 Armour, +1 Size, [+2 dodge])
-!hp 35 + 1d8 = 5d8 + 5 [8, 8, 7, 7, ?] 
- > Fort:   +4 = +1 | +1 Con | +1/+1 (luck/res)
- > Ref:   *+8 = +4 | +2 Dex | +1/+1 (luck/res)
- > Will:   +5 = +4 | −1 Wis | +1/+1 (luck/res)
+!hp 35 + 1d8 = 5d8 + 5 [8, 8, 7, 7, ?]
+ > Fort:   +4 = +1 | +1_Con | +1_luck | +1_res
+ > Ref:   *+8 = +4 | +2_Dex | +1_luck | +1_res
+ > Will:   +5 = +4 | −1_Wis | +1_luck | +1_res
 %Special Defenses: +2 (racial) vs. fear effects;
  +2 dodge to AC for the duration of bardic performances,
  *Evasion.
@@ -22,15 +22,16 @@ __(+2 Dex, +5 Armour, +1 Size, [+2 dodge])
 !Ranged Sling +6 (1d3 − 1)
 %Special Attacks: Cacophonous Chord (3d6, DC 17 Fort halves)
 // +3 bab + 2 dex + 1 size
+
 ===𝄞|Statistics=============================================
 
 !AbilityScores
- > Str (−1)   8 = 11  | −1 (age) −2 (race)
- > Dex (+2)  14 = 13  | −1 (age) +2 (race)
- > Con (+1)  12 = 13  | −1 (age)
- > Int (+3)  16 = 15  | +1 (age)
- > Wis (−1)   8 =  9  | +1 (age)
- > Cha (+5)  20 = 17  | +1 (age) +2 (race)
+ > Str (−1)   8 = 11  | −1_(age) | −2_(race)
+ > Dex (+2)  14 = 13  | −1_(age) | +2_(race)
+ > Con (+1)  12 = 13  | −1_(age)
+ > Int (+3)  16 = 15  | +1_(age)
+ > Wis (−1)   8 =  9  | +1_(age)
+ > Cha (+5)  20 = 17  | +1_(age) | +2_(race)
 !BAB +3; !CMB +1; !CMD 13 [15] 
 %Languages: Common, Halfling, Goblin, Varisian, Hallitim, 
  Androffan
@@ -51,8 +52,8 @@ __(+2 Dex, +5 Armour, +1 Size, [+2 dodge])
 %Creepy: No size penalty on intimidate vs. larger humanoids.
 
 ===𝄞|Spells=================================================
-_Concentration +10 (+12 during bardic peformance)
-_+1 CL on spells with Darkness, Light or Shadow descriptior.
+%Concentration +10 (+12 during bardic peformance)
+%+1 CL on spells with Darkness, Light or Shadow descriptior.
 
 // Blistering Invective, Glitterdust, Heroism, Invisibility,
 // Hold Person??? Enthrall??? Suggestion
@@ -75,15 +76,16 @@ _+1 CL on spells with Darkness, Light or Shadow descriptior.
 // Or we go sorcerer / eldrithc heritage???
 // Raksasha, Arcane 
 
-|1 |Lingering Performance: bardic performances last for an…
+!Feats
+>1 |Lingering Performance: bardic performances last for an…
     additional 2 rounds.
-|1b|Spell Song: As swift action, use 1 round of bardic…
+>1b|Spell Song: As swift action, use 1 round of bardic…
     performance to hide spellcasting (Perception or Sense… 
     Motive vs. Perform). As Move action, use one round of…
     bardic performance to maintain concentration.…
     Maintained spell ends when performance ends.
-|3 |Skill Focus: Knowledge Engineering.
-|5 |Eldritch Heritage: Arcane, gain a familiar at CL−2.
+>3 |Skill Focus: Knowledge Engineering.
+>5 |Eldritch Heritage: Arcane, gain a familiar at CL−2.
 
 ===𝄞|Skills [9 + favoured class/level]======================
 // TBD 
@@ -134,13 +136,13 @@ __+2 dodge bonus to AC, +2 on Concentration checks,
 //Can be used 2 + 2 × level + Cha rounds per day…
 //DC 10 + 1/2 level [2] + Cha [+5] = 17
 
-_BP is started as a standard cation and maintained as a…
+%BP is started as a standard cation and maintained as a…
  free action. It cannot be disturbed but ends immediately…
  if the bard is prevented from taking a free action.…
  A bard cannot have more than one BP in effect at one time.…
  A deaf/blind bard has a 20\%/50\% chance to fail…
  their peformance.
-_All instrumentalist's bardic performances must be…
+%All instrumentalist's bardic performances must be…
  accompanied by an instrument, even if they soleley rely…
  on visual components.
  
@@ -204,7 +206,7 @@ _For the duration of the performance, invoke a dissonance…
 > Ioun Tape + Zippo
 > Sprocket Sand
 
-_Purse: 2046.7; 4 silverdisks
+%Purse: 2046.7; 4 silverdisks
 
 =𝄞|Notes====================================================
 
