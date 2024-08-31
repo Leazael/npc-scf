@@ -1,4 +1,6 @@
-# Intro
+# npc-scf 
+
+"Nonspecific Parsing Config for a Standardized Charater Format".
 
 The goals of this project are:
 - Formulate a mark-down inspired mark-up language (the .npc format) that can describe character sheets in a plain-text format.
