@@ -8,10 +8,21 @@ This Should Default to !hp default despite the keyword
 
 ===Section======================================
 
-!hp 35 + 1d8 = 5d8 + 5 [8, 8, 7, 7, ?]
- > Fort:   +4 = +1 | +1_Con | +1_luck | +1_res
- > Ref:   *+8 = +4 | +2_Dex | +1_luck | +1_res
- > Will:   +5 = +4 | −1_Wis | +1_luck | +1_res
+!hp 35 + 1d8 = 5d8 + 5 {8, 8, 7, 7}
+ > Ref:   *+8 = +4 | +2_Dex | +1_luck | +1_res  
+ > Fort:   +4 = +1 | +1_Con | +1_luck |
+ > Will:   +5 = +4 | −1_Wis | +1_luck |
+ > Moxy:   +3 = +6 | −3_Brn | +1_luck |
+
+~~
+
+!saves
+> Ref:   *+8 = +4 | +2_Dex | +1_luck | +1_res | +1_res 
+> Fort:   +4 = +1 | +1_Con | +1_luck  | +1_res 
+> Will:   +5 = +7 | −1_Wis | +1_luck | +1_res 
+> Moxy:   +3 = +6 | −3_Brn | +1_luck |
+
+~~
 
 !hp 101 + ∞
 !vp: (6d12 + 6 rage); !wp: 99, !DR: 10 / Cold Iron //Random unicode, for a lark

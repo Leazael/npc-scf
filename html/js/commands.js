@@ -7,8 +7,16 @@ var currentColumn = -1;
 function prepareTable(input) {
   const splitByAnd = input.split('&&');
   const result = splitByAnd.map(substring => substring.split("||"));
+  const maxLength = Math.max(...result.map(subArray => subArray.length));
+ 
+  const paddedResult = result.map(subArray => {
+    while (subArray.length < maxLength) {
+      subArray.push('');
+    }
+    return subArray;
+  });
 
-  return result;
+  return paddedResult;
 }
 
 function textPrimary(txt) {
@@ -127,11 +135,34 @@ function spellLikeAbility(freq, list) {
 
 function hpSavesTable(hp1, hp2, hp3, tableIn) {
   const tableArray = prepareTable(tableIn);
-  const tableContent = `<table class="table-save">
+  var tableContent = `<table class="table-hp-save">
   <tr><td>${tableArray[0].slice(0,2).join('</td><td>')}</td><td>=</td><td>${tableArray[0].slice(2).join('</td><td>&nbsp')}</td><td>hp&nbsp</td><td>${hp1}</td></tr></tr>
   <tr><td>${tableArray[1].slice(0,2).join('</td><td>')}</td><td>=</td><td>${tableArray[1].slice(2).join('</td><td>&nbsp')}</td><td></td><td>${hp2}</td></tr>
   <tr><td>${tableArray[2].slice(0,2).join('</td><td>')}</td><td>=</td><td>${tableArray[2].slice(2).join('</td><td>&nbsp')}</td><td></td><td>${hp3}</td></tr>
-  </table>`;
+  `;
+
+  if (tableArray.length > 3) {
+    tableContent = tableContent + `<tr><td>${(tableArray.splice(3).map(x => ([...x.splice(0,2), '=', ...x]).join('</td><td>&nbsp'))).join('</td><td></td><td></td></tr><tr><td>')}</td><td></td><td></td></tr>`
+  }
+
+  tableContent = tableContent + `</table>`;
+  
+  return document.write(`<p>${tableContent}</p>`);
+};
+
+function savesTable(tableIn) {
+  const tableArray = prepareTable(tableIn);
+  var tableContent = `<table class="table-save">
+  <tr><td>${tableArray[0].slice(0,2).join('</td><td>')}</td><td>=</td><td>${tableArray[0].slice(2).join('</td><td>&nbsp')}</td></tr>
+  <tr><td>${tableArray[1].slice(0,2).join('</td><td>')}</td><td>=</td><td>${tableArray[1].slice(2).join('</td><td>&nbsp')}</td></tr>
+  <tr><td>${tableArray[2].slice(0,2).join('</td><td>')}</td><td>=</td><td>${tableArray[2].slice(2).join('</td><td>&nbsp')}</td></tr>
+  `;
+
+  if (tableArray.length > 3) {
+    tableContent = tableContent + `<tr><td>${(tableArray.splice(3).map(x => ([...x.splice(0,2), '=', ...x]).join('</td><td>&nbsp'))).join('</td></tr><tr><td>')}</td></tr>`
+  }
+
+  tableContent = tableContent + `</table>`;
   return document.write(`<p>${tableContent}</p>`);
 };
 

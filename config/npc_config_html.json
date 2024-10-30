@@ -50,9 +50,15 @@
     },
     {
       "description": "Keyword: hp and save table",
-      "pattern": ["!hp", "=", "[", "]"],
+      "pattern": ["!hp", "=", "{", "}"],
       "table": {"delimiters": [":", "=", ["_", "|"]], "repeat": true},      
       "cmd": "hpSavesTable(`var#2`, `var#3`, `var#4`, `tab#`); //dsc#"
+    },
+    {
+      "description": "Keyword: save table",
+      "pattern": ["!saves"],
+      "table": {"delimiters": [":", "=", ["_", "|"]], "repeat": true},     
+      "cmd": "savesTable(`tab#`); //dsc#"
     },
     {
       "description": "Keyword: Three Bold Keywords",
@@ -80,7 +86,7 @@
     },
     {
       "description": "Keyword: One Bold Keyword",
-      "pattern": [["!hp", "!speed", "!melee", "!ranged"]],
+      "pattern": [["!hp", "!speed", "!melee", "!ranged", "!reach"]],
       "stripChars": [",", ";", ":"],
       "cmd": "alternateBold(`;`, `var#1`, `var#2`); //dsc#"
     },
@@ -116,7 +122,7 @@
     },
     {
       "description": "Keyword: Feats table",
-      "pattern": ["!Feats"],
+      "pattern": [["!Feats", "!FeatsTable", "!Spells", "!SpellsTable"]],
       "table": {"delimiters": ["|", ":"], "repeat": false},
       "cmd": "featsTable(`tab#`); //dsc#"
     },

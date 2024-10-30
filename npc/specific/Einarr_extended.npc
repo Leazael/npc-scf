@@ -7,7 +7,7 @@ Male Human Slayer 6
 
 !AC 19 [20], !Touch 15, !FlatFooted 14 [15]
 __(+5 Dex, +4 Armour, [+1 Shield])
-!hp 43 = 6d10 + 0 [10 + 6 + 10 + 2 + 9 + 6]
+!hp 43 = 6d10 + 0 {10 + 6 + 10 + 2 + 9 + 6}
  > Fort:   +5 = +5 |  +0
  > Ref:   +10 = +5 |  +5
  > Will:   +4 = +2 |  +2

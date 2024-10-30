@@ -1,4 +1,4 @@
-!Name Ludovico Zanni (Level 5) // And Nothing
+!Name Ludovico Zanni (Level 5)
 Male halfling Bard (Instrumentalist/Cacophist) 5
 !NG Small Humanoid (Halfling), !Age 61
 !Init +2; !Senses Perception +8
@@ -7,7 +7,7 @@ Male halfling Bard (Instrumentalist/Cacophist) 5
 
 !AC 18 [20], !Touch 13 [15], !FlatFooted 16
 __(+2 Dex, +5 Armour, +1 Size, [+2 dodge])
-!hp 35 + 1d8 = 5d8 + 5 [8, 8, 7, 7, ?]
+!hp 35 + 1d8 = 5d8 + 5 {8, 8, 7, 7, ?}
  > Fort:   +4 = +1 | +1_Con | +1_luck | +1_res
  > Ref:   *+8 = +4 | +2_Dex | +1_luck | +1_res
  > Will:   +5 = +4 | −1_Wis | +1_luck | +1_res
@@ -22,7 +22,6 @@ __(+2 Dex, +5 Armour, +1 Size, [+2 dodge])
 !Ranged Sling +6 (1d3 − 1)
 %Special Attacks: Cacophonous Chord (3d6, DC 17 Fort halves)
 // +3 bab + 2 dex + 1 size
-
 ===𝄞|Statistics=============================================
 
 !AbilityScores
@@ -52,8 +51,8 @@ __(+2 Dex, +5 Armour, +1 Size, [+2 dodge])
 %Creepy: No size penalty on intimidate vs. larger humanoids.
 
 ===𝄞|Spells=================================================
-%Concentration +10 (+12 during bardic peformance)
-%+1 CL on spells with Darkness, Light or Shadow descriptior.
+_%Concentration +10 (+12 during bardic peformance)
+_%+1 CL on spells with Darkness, Light or Shadow descriptior.
 
 // Blistering Invective, Glitterdust, Heroism, Invisibility,
 // Hold Person??? Enthrall??? Suggestion
@@ -166,7 +165,7 @@ __+2 dodge bonus to AC, +2 on Concentration checks,
 
 =𝄞|Dissonant performance (DC 17)===========================
 
-_For the duration of the performance, invoke a dissonance…
+%For the duration of the performance, invoke a dissonance…
  as a standard action. May invoke a dissonance on starting…
  the performance by spending an extra round of bardic…
  performance.
@@ -188,7 +187,9 @@ _For the duration of the performance, invoke a dissonance…
 > Mwk Artisan’s tools                 |    55 gp |  2½ lb.
 > +1 Cloak of Resistance              |  1000 gp |   ½ lb
 > Wand of Cure Moderate Wounds [9 Charges]
+> ↪ ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐ 
 > Wand of Grease [10 Charges]
+> ↪ ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐
 > Symbol of Brigh
 > White Keycard
 

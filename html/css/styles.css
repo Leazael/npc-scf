@@ -146,37 +146,41 @@ p {
 
 /* The HP + saves table */
 
-.table-save td, .table1 th {
+.table-save td, .table-hp-save td {
   width: var(--indent-size);
   text-align: right;
 }
 
-.table-save td:nth-child(1) {
+.table-save td:nth-child(1),
+.table-hp-save td:nth-child(1) {
   font-weight: bold;
   text-align: left;
   width: calc(var(--indent-size));
 }
 
-.table-save td:nth-child(even) {
+.table-save td:nth-child(even),
+.table-hp-save td:nth-child(even) {
   width: calc(var(--indent-size));
   text-align: left;
 }
 
 .table-save td:nth-child(2),
-.table-save td:nth-child(4) {
+.table-save td:nth-child(4),
+.table-hp-save td:nth-child(2),
+.table-hp-save td:nth-child(4) {
   text-align: right;
   width: var(--indent-size);
 }
 
 /* For the hp part after the table */
 
-.table-save td:nth-last-child(2) {
+.table-hp-save td:nth-last-child(2) {
   width: calc(2*var(--indent-size));
   font-weight: bold;
   text-align: right;
 }
 
-.table-save td:nth-last-child(1) {
+.table-hp-save td:nth-last-child(1) {
   width: auto;
   text-align: left;
 }

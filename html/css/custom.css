@@ -1,5 +1,5 @@
 .with-clef {
-  background-image: url('img/clef.svg');
+  background-image: url('../img/clef.svg');
   background-size: 110%;
   background-position: -.2mm 0;
   /* background-clip: none;  */

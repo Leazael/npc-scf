@@ -5,7 +5,10 @@ textPrimary(`CE Medium Humanoid [Evil], <span class="bold">Age:</span> ∞ + 1`)
 alternateBold(`;`, `Init`, `+8 [uncanny dodge]`, `Senses`, `Perception +10, Darkvision, Life-Sense.`); //Keyword: Two Bold Keywords
 textPrimary(`<span class="bold">AC</span> 18 [20], Touch 13 [15], Flat-footed 16`); //Keyword: AC
 section(`Section`); //Header: Standard
-hpSavesTable(`35 + 1d8`, `5d8 + 5`, `8, 8, 7, 7, ?`, `Fort||+4||+1||+1||Con||+1||luck||+1||res&&Ref||*+8||+4||+2||Dex||+1||luck||+1||res&&Will||+5||+4||−1||Wis||+1||luck||+1||res`); //Keyword: hp and save table
+hpSavesTable(`35 + 1d8`, `5d8 + 5`, `8, 8, 7, 7`, `Ref||*+8||+4||+2||Dex||+1||luck||+1||res&&Fort||+4||+1||+1||Con||+1||luck||&&Will||+5||+4||−1||Wis||+1||luck||&&Moxy||+3||+6||−3||Brn||+1||luck||`); //Keyword: hp and save table
+newLineSecondary(); //Empty Line of Secondary Size
+savesTable(`Ref||*+8||+4||+2||Dex||+1||luck||+1||res||+1||res&&Fort||+4||+1||+1||Con||+1||luck||+1||res&&Will||+5||+7||−1||Wis||+1||luck||+1||res&&Moxy||+3||+6||−3||Brn||+1||luck||`); //Keyword: save table
+newLineSecondary(); //Empty Line of Secondary Size
 alternateBold(`;`, `hp`, `101 + ∞`); //Keyword: One Bold Keyword
 alternateBold(`;`, `vp`, `(6d12 + 6 rage)`, `wp`, `99`, `DR`, `10 / Cold Iron`); //Keyword: Three Bold Keywords
 alternateBold(`;`, `vp`, `99`, `wp`, `66`); //Keyword: Two Bold Keywords

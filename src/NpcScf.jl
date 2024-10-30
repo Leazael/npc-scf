@@ -1,4 +1,4 @@
-module NpcScf 
+module NPCScf 
     using JSON3
 
     export parse_npc

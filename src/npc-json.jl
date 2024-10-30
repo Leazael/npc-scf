@@ -5,7 +5,7 @@ const Pattern = Vector{Match}
 rex_str(m::Vector{String}) = "(\\Q" * join( escape_string.(m), "\\E|\\Q") * "\\E)"
 rex_str(m::String) = rex_str([m])
 rex(m::Match) = Regex(rex_str(m), "i")
-rex(mm::Pattern) = isempty(mm) ? Regex("()()(.*)") :  Regex("(.*?)" * join(rex_str.(mm), "(.*)") * "(.*)", "i")
+rex(mm::Pattern) = isempty(mm) ? Regex("()()(.*)") :  Regex("(.*?)" * join(rex_str.(mm), "(.*?)") * "(.*)", "i")
 match_strip(s::AbstractString, m::Match) = strip(s, collect(join(m) * " "))
 match_strip(ss::Vector{<:AbstractString}, m::Match) = map(s -> match_strip(s, m), ss)
 
